@@ -44,6 +44,57 @@ console.log(newobj);
 
 result(array1, obj1);
 
+// ------------------------------------------------
+
+// 2 types of memory
+// 1. Stack Memory, 2. Heap Memoryy
+
+// Stack Memory  - Store Premitive Data
+// Heap Memory - Store Non-Premitive Data
+
+// Premitive
+
+function sum(a,b)
+{
+    a =a+2;
+    b =b+2;
+    console.log("The result inside the function: "+a);
+    console.log("The result inside the function: "+b);
+    
+    
+    const result =a+b;
+    console.log(result);
+    
+}
+
+let c=10, d=20;
+console.log("The result outside the function: "+c);
+console.log("The result outside the function: "+d);
+
+
+sum(c,d);
+
+// Call by valuse pass the copy of original value.
+// That is why the original value of c and d has not changed 
+// although the value of a and b has changed inside the function
+
+// Non-primitve
+
+function arrayDisplay(arr2)
+
+{
+    arr2.push(100);
+    console.log(arr2);
+    
+}
+
+let arr1 =[10,20,30,40];
+arrayDisplay(arr1);
+console.log(arr1);
+
+// Note: Call by reference change the original value. 
+// I have pushed 100 in the arr2 but it has changed the original value of arr1.
+
 
 
 
