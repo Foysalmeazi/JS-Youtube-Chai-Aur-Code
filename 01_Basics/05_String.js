@@ -16,7 +16,7 @@ console.log(splitStr);
 
 const firstName = splitStr[0];
 const lastName = splitStr[1];
-const charIs = strname.charAt(9);
+const charIs = strname.charAt(8);
 
 
 
