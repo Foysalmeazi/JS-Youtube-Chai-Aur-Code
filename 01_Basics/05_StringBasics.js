@@ -3,7 +3,7 @@ const str1 = "Abdullah";
 const str2 = "Al Foysal";
 
 const age =20;
-const address = 'I live in Australia';
+const address = 'I live in Sydney';
 
 //console.log(`My name is ${str1} ${str2}, Age: ${age} and ${address}`);
 
