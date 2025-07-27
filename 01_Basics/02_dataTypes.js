@@ -1,9 +1,12 @@
+// Print a simple string
 console.log("Foysal");
 
-let name = "Foysal";
-let age =20;
-let phone = undefined;
-let value = null;
-let isLogged = false;
+// Declare variables of different types
+let name = "Foysal";       // String
+let age = 20;              // Number
+let phone = undefined;     // Undefined
+let value = null;          // Null (special object type)
+let isLogged = false;      // Boolean
 
-console.log(typeof isLogged);
+// Check the type of the boolean variable
+console.log(typeof isLogged); // Output: "boolean"
