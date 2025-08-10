@@ -52,3 +52,15 @@ const userprofile =
 console.log('UserProfile:\n',userprofile);
 
 
+// Object De-Structuring
+
+const course = 
+{
+    courseName: 'English',
+    price: 1000,
+    instructor: 'Saifurs English'
+}
+
+const {instructor: instract} = course;
+
+console.log('Course Instructor is: ', instract);
