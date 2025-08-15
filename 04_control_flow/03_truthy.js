@@ -62,3 +62,13 @@ const val1 = undefined;
 const val2 = 20;
 const result = val1 ?? val2 ?? 15;
 console.log(`Result from val1 ?? val2 ?? 15: ${result}`); // "20"
+
+
+console.log("\n===== terniary operator (?) =====");
+
+console.log("\n===== condition ? true: false =====");
+
+const applePrice = 200;
+applePrice>200 ? console.log('✘ Its too pricy..'): console.log('✔ The price is not much');
+
+
