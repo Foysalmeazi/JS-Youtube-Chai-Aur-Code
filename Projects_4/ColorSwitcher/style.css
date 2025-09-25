@@ -1,0 +1,103 @@
+/* Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    transition: background-color 0.5s ease;
+}
+/* Header */
+header {
+    text-align: center;
+    padding: 50px 20px 20px 20px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+header h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* Container */
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+}
+
+/* Buttons */
+.btns {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.color-btn {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 4px solid white;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+}
+
+.color-btn:hover {
+    transform: scale(1.2) rotate(10deg);
+    box-shadow: 0 12px 20px rgba(0,0,0,0.3);
+}
+
+/* Color gradients */
+.red { background: linear-gradient(135deg, #ff6b6b, #ff4757); }
+.blue { background: linear-gradient(135deg, #1e90ff, #3742fa); }
+.green { background: linear-gradient(135deg, #2ed573, #1eae60); }
+.yellow { background: linear-gradient(135deg, #ffec3d, #f1c40f); }
+.purple { background: linear-gradient(135deg, #9b59b6, #8e44ad); }
+
+/* Info section */
+.info {
+    max-width: 700px;
+    text-align: center;
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+.info h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.info p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: rgba(255,255,255,0.6);
+    border-top: 1px solid rgba(0,0,0,0.1);
+    backdrop-filter: blur(5px);
+    font-size: 0.9rem;
+    color: #555;
+}
