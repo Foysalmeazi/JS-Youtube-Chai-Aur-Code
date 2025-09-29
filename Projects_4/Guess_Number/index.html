@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guess the Number</title>
+
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: #fff;
+    }
+
+    .game-container {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 2.5rem;
+      border-radius: 20px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 350px;
+    }
+
+    .game-container h1 {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      color: #fff;
+    }
+
+    .form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    #guess {
+      font-size: 1.1rem;
+      font-weight: 500;
+    }
+
+    .guessField {
+      padding: 0.7rem 1rem;
+      width: 100%;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      outline: none;
+      transition: 0.3s ease;
+    }
+
+    .guessField:focus {
+      box-shadow: 0 0 8px #2575fc;
+    }
+
+    .guessSubmit {
+      background: #2575fc;
+      color: #fff;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .guessSubmit:hover {
+      background: #6a11cb;
+      transform: scale(1.05);
+    }
+
+    .resultParas {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 1rem;
+      border-radius: 10px;
+      font-size: 1rem;
+    }
+
+    .resultParas p {
+      margin-bottom: 0.6rem;
+    }
+
+    .lowOrHi {
+      font-weight: 600;
+      font-size: 1.1rem;
+      color: #ffeb3b;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="game-container">
+    <h1>🎯 Guess the Number (1–100)</h1>
+
+    <form class="form">
+      <label for="guessField" id="guess">Enter Your Guess 👇</label>
+      <input type="text" id="guessField" class="guessField" placeholder="e.g. 42">
+      <input type="submit" id="subt" value="Submit Guess" class="guessSubmit">
+    </form>
+
+    <div class="resultParas" id="resultParas">
+      <p>💡 Previous Guesses: <span class="guesses"></span></p>
+      <p>🎯 Guesses Remaining: <span id="last-result">10</span></p>
+      <p id="lowOrHi"></p>
+    </div>
+  </div>
+
+
+  <script>
+
+    const randomNum = (parseInt(Math.random() * 100 + 1));
+
+    const userInput = document.getElementById('guessField');
+    const submitBtn = document.getElementById('subt');
+    const prevGuess = document.getElementById('.guesses');
+    const remainingGuess = document.getElementById('last-result');
+    const lowOrHI = document.getElementById('lowOrHi');
+
+    const startOver = document.getElementById('resultParas');
+    const p = document.createElement('p');
+
+
+    let playGame = true;
+    let previousGuess = [];
+    let numGuess = 1;
+
+    if (playGame) {
+      submitBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const guess = parseInt(userInput.value);
+        ValidateGuess(guess)
+      })
+
+
+    }
+
+    function ValidateGuess(guess) {
+
+    }
+
+    function checkGuess(guess) {
+
+    }
+
+    function displayGuess(guess) {
+
+    }
+
+    function displayMessage(message) {
+
+    }
+
+    function endGame() {
+
+    }
+
+
+
+
+  </script>
+</body>
+
+</html>

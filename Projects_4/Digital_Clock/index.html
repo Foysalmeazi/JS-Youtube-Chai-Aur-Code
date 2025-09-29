@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Digital Clock</title>
+   
+<style>
+    /* Reset and center */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Clock container */
+    .clock {
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-radius: 15px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      padding: 40px 60px;
+      color: #ffffff;
+      font-size: 4em;
+      letter-spacing: 2px;
+      text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .clock:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="clock" id="clock">00:00:00</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
