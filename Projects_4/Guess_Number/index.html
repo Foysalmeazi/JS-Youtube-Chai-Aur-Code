@@ -99,6 +99,32 @@
       font-size: 1.1rem;
       color: #ffeb3b;
     }
+
+    #newgameStart {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      /* green */
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      text-align: center;
+      transition: background-color 0.3s ease;
+    }
+
+    #newgameStart:hover {
+      background-color: #45a049;
+      /* darker green on hover */
+    }
+
+    #newgameStart:active {
+      background-color: #3e8e41;
+      /* even darker when clicked */
+      transform: scale(0.98);
+      /* small click effect */
+    }
   </style>
 
 </head>
@@ -114,7 +140,7 @@
     </form>
 
     <div class="resultParas" id="resultParas">
-      <p>💡 Previous Guesses: <span class="guesses"></span></p>
+      <p>💡 Previous Guesses: <span id="guesses"></span></p>
       <p>🎯 Guesses Remaining: <span id="last-result">10</span></p>
       <p id="lowOrHi"></p>
     </div>
@@ -123,53 +149,103 @@
 
   <script>
 
-    const randomNum = (parseInt(Math.random() * 100 + 1));
-
+    const randomNum = parseInt(Math.random() * 100 + 1);
     const userInput = document.getElementById('guessField');
     const submitBtn = document.getElementById('subt');
-    const prevGuess = document.getElementById('.guesses');
+    const startOver = document.getElementById('resultParas');
+    const prevGuess = document.getElementById('guesses');
     const remainingGuess = document.getElementById('last-result');
     const lowOrHI = document.getElementById('lowOrHi');
 
-    const startOver = document.getElementById('resultParas');
     const p = document.createElement('p');
 
-
-    let playGame = true;
     let previousGuess = [];
     let numGuess = 1;
+    let playGame = true;
 
-    if (playGame) {
-      submitBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        const guess = parseInt(userInput.value);
-        ValidateGuess(guess)
-      })
-
-
-    }
+    submitBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const guess = parseInt(userInput.value);
+      ValidateGuess(guess);
+    });
 
     function ValidateGuess(guess) {
+      if (playGame) {
+        if (guess < 1 || guess > 100 || isNaN(guess)) {
+          displayMessage('Enter a valid number between 1 and 100.');
+        } else {
+          previousGuess.push(guess);
+          cleanGuess(guess);
+          if (numGuess > 10) {
+            displayMessage(`Game Over! The number was ${randomNum}`);
+            endGame();
+          } else {
+            checkGuess(guess);
+          }
+        }
+      }
+      else {
+
+      }
+
 
     }
 
     function checkGuess(guess) {
-
+      if (guess === randomNum) {
+        displayMessage('🎉 You guessed it right!');
+        endGame();
+      } else if (guess > randomNum) {
+        displayMessage('⬆ Too High!');
+      } else {
+        displayMessage('⬇ Too Low!');
+      }
     }
 
-    function displayGuess(guess) {
-
+    function cleanGuess(guess) {
+      userInput.value = '';
+      prevGuess.innerHTML = previousGuess.join(', ');
+      remainingGuess.innerHTML = `${10 - numGuess}`;
+      numGuess++;
     }
 
     function displayMessage(message) {
-
+      lowOrHI.innerHTML = `<h2>${message}</h2>`;
     }
+
 
     function endGame() {
+      userInput.value = '';
+      userInput.setAttribute('disabled', '');
+      p.classList.add('button');
+      p.innerHTML = `<h2 id = 'newgameStart'>Start New Game</h2>`
+      startOver.appendChild(p);
+      playGame = false;
+      newgame();
 
     }
 
+    function newgame() {
 
+      const newGameButton = document.getElementById('newgameStart');
+
+      newGameButton.addEventListener('click', (e) => {
+        let randomNum = parseInt(Math.random() * 100 + 1);
+        let previousGuess = [];
+        let numGuess = 1;
+        prevGuess.innerHTML = '';
+        remainingGuess.innerHTML = '';
+        userInput.removeAttribute('disabled');
+        startOver.removeChild(p);
+        let playGame = true;
+      })
+
+
+
+    }
+
+    //let previousGuess = [];
+    //let numGuess = 1;
 
 
   </script>
